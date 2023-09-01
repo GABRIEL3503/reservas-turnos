@@ -1,0 +1,821 @@
+{
+  "object": "list",
+  "results": [
+    {
+      "object": "page",
+      "id": "7f32e1c0-79d7-467c-a8e0-1fbbd3724abe",
+      "created_time": "2023-08-17T22:01:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "22",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "22",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/22-7f32e1c079d7467ca8e01fbbd3724abe",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "9266eab2-edbc-48f6-b39f-6dc6855f24b7",
+      "created_time": "2023-08-17T22:01:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "21",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "21",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/21-9266eab2edbc48f6b39f6dc6855f24b7",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "6393db73-0852-4531-8668-6970c9d1f3de",
+      "created_time": "2023-08-17T22:01:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "20",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "20",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/20-6393db730852453186686970c9d1f3de",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "05ad4a94-b2eb-46de-a96d-4ba442d97e77",
+      "created_time": "2023-08-17T17:10:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "19",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "19",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/19-05ad4a94b2eb46dea96d4ba442d97e77",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "cbb7554d-4c0d-4ac9-a243-903e788f5e7a",
+      "created_time": "2023-08-17T17:10:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "18",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "18",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/18-cbb7554d4c0d4ac9a243903e788f5e7a",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "179c7813-9a6a-4679-a2a0-db150c818317",
+      "created_time": "2023-08-17T17:10:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "17",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "17",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/17-179c78139a6a4679a2a0db150c818317",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "62f0f336-0083-45ea-9018-566e1ae113c4",
+      "created_time": "2023-08-17T16:50:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "16",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "16",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/16-62f0f336008345ea9018566e1ae113c4",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "f239d55f-6571-4203-b90c-1304b7af6977",
+      "created_time": "2023-08-17T16:50:00.000Z",
+      "last_edited_time": "2023-08-20T22:51:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "15",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "15",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/15-f239d55f65714203b90c1304b7af6977",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "40e55249-546a-447b-92bc-8a37b01b4d6b",
+      "created_time": "2023-08-17T16:50:00.000Z",
+      "last_edited_time": "2023-08-20T23:16:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "9b6a578f-906e-40e6-8302-c8af4e891692"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": false
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "14",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "14",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/14-40e55249546a447b92bc8a37b01b4d6b",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "d43ecfaf-8bcb-41ca-a181-ff6a52e20e41",
+      "created_time": "2023-08-17T16:50:00.000Z",
+      "last_edited_time": "2023-08-20T23:16:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "9b6a578f-906e-40e6-8302-c8af4e891692"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "13",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "13",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/13-d43ecfaf8bcb41caa181ff6a52e20e41",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "d3a8be02-3397-4bd1-a72a-5e2b1b70ff1d",
+      "created_time": "2023-08-17T16:45:00.000Z",
+      "last_edited_time": "2023-08-20T23:17:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "9b6a578f-906e-40e6-8302-c8af4e891692"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "09",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "09",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/09-d3a8be0233974bd1a72a5e2b1b70ff1d",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "5e8a445b-6704-4296-a71a-f9693f9fb879",
+      "created_time": "2023-08-17T16:43:00.000Z",
+      "last_edited_time": "2023-08-20T23:19:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "9b6a578f-906e-40e6-8302-c8af4e891692"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "10",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "10",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/10-5e8a445b67044296a71af9693f9fb879",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "d5a77b31-8d14-46a9-9550-ebcfc0cd1e7e",
+      "created_time": "2023-08-17T16:43:00.000Z",
+      "last_edited_time": "2023-08-20T23:17:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "9b6a578f-906e-40e6-8302-c8af4e891692"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "11",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "11",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/11-d5a77b318d1446a99550ebcfc0cd1e7e",
+      "public_url": null
+    },
+    {
+      "object": "page",
+      "id": "f9ed2c9c-11ce-4a10-8cba-bf0630b0de54",
+      "created_time": "2023-08-17T16:43:00.000Z",
+      "last_edited_time": "2023-08-20T23:17:00.000Z",
+      "created_by": {
+        "object": "user",
+        "id": "e09752b1-bfce-4b9d-8ef4-6085eba8daf4"
+      },
+      "last_edited_by": {
+        "object": "user",
+        "id": "9b6a578f-906e-40e6-8302-c8af4e891692"
+      },
+      "cover": null,
+      "icon": null,
+      "parent": {
+        "type": "database_id",
+        "database_id": "faac3196-fb5d-4c5d-aa0b-f944180604fb"
+      },
+      "archived": false,
+      "properties": {
+        "martes": {
+          "id": "dRIV",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "lunes": {
+          "id": "%7Bsmi",
+          "type": "checkbox",
+          "checkbox": true
+        },
+        "Horario": {
+          "id": "title",
+          "type": "title",
+          "title": [
+            {
+              "type": "text",
+              "text": {
+                "content": "12",
+                "link": null
+              },
+              "annotations": {
+                "bold": false,
+                "italic": false,
+                "strikethrough": false,
+                "underline": false,
+                "code": false,
+                "color": "default"
+              },
+              "plain_text": "12",
+              "href": null
+            }
+          ]
+        }
+      },
+      "url": "https://www.notion.so/12-f9ed2c9c11ce4a108cbabf0630b0de54",
+      "public_url": null
+    }
+  ],
+  "next_cursor": null,
+  "has_more": false,
+  "type": "page_or_database",
+  "page_or_database": {}
+}

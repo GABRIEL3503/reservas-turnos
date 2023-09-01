@@ -1,0 +1,58 @@
+
+.horario {
+    align-items: center;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+}
+#contenedor{
+display: flex;
+}
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(96,96,103,1) 35%, rgba(162,182,186,1) 100%);
+}
+h2{
+    color: white;
+}
+span{
+    color: wheat;
+}
+
+button{
+    border: none;
+    border-radius: 9px;
+    padding: 9px;
+    margin: 9px;
+    font-weight: 700;
+    color: rgb(59, 59, 59);
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
