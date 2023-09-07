@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Estilos de Swiper -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Horarios</title>
+</head>
+
+<body class="bodytur">
+  
+
+    <!-- Contenedor de Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div id="lunesContainer">
+                    <h2>Lunes</h2>
+                    <div id="horariosLunes"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="martesContainer">
+                    <h2>Martes</h2>
+                    <div id="horariosMartes"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="miercolesContainer">
+                    <h2>Miércoles</h2>
+                    <div id="horariosMiercoles"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="juevesContainer">
+                    <h2>Jueves</h2>
+                    <div id="horariosJueves"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="viernesContainer">
+                    <h2>Viernes</h2>
+                    <div id="horariosViernes"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div id="sabadoContainer">
+                    <h2>Sábado</h2>
+                    <div id="horariosSabado"></div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <!-- Scripts necesarios para Swiper y tu lógica -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+// Esta función se encargará de gestionar el comportamiento del botón "Cliente"
+async function handleClienteButtonClick(day, horario) {
+    const storageKey = `${day}_${horario}`;
+    const clientData = JSON.parse(localStorage.getItem(storageKey));
+
+    if (clientData) {
+        const result = await Swal.fire({
+            title: 'Información del Cliente',
+            text: `Nombre: ${clientData.name}, Teléfono: ${clientData.phone}`,
+            showCancelButton: true,
+            confirmButtonText: 'Cerrar',
+            cancelButtonText: 'Eliminar'
+        });
+
+        if (result.dismiss === Swal.DismissReason.cancel) {
+            localStorage.removeItem(storageKey);
+            Swal.fire('Eliminado', 'Los datos del cliente han sido eliminados.', 'success');
+        }
+    } else {
+        const { value: formValues } = await Swal.fire({
+            title: 'Información del Cliente',
+            html: '<input id="swal-input1" class="swal2-input" placeholder="Nombre">' +
+                  '<input id="swal-input2" class="swal2-input" placeholder="Teléfono">',
+            focusConfirm: false,
+            preConfirm: () => {
+                return [
+                    document.getElementById('swal-input1').value,
+                    document.getElementById('swal-input2').value
+                ];
+            }
+        });
+        localStorage.setItem(storageKey, JSON.stringify({ name: formValues[0], phone: formValues[1] }));
+    }
+}
+
+
+
+
+
+
+        // Inicialización de Swiper
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+        function fetchAndRenderData() {
+            fetch('/data')
+                .then(response => response.json())
+                .then(data => {
+                    const horariosLunes = document.getElementById('horariosLunes');
+                    const horariosMartes = document.getElementById('horariosMartes');
+                    const horariosMiercoles = document.getElementById('horariosMiercoles');
+                    const horariosJueves = document.getElementById('horariosJueves');
+                    const horariosViernes = document.getElementById('horariosViernes');
+                    const horariosSabado = document.getElementById('horariosSabado');
+
+                    // Limpiar contenido previo
+                    horariosLunes.innerHTML = '';
+                    horariosMartes.innerHTML = '';
+                    horariosMiercoles.innerHTML = '';
+                    horariosJueves.innerHTML = '';
+                    horariosViernes.innerHTML = '';
+                    horariosSabado.innerHTML = '';
+
+                    const sortedData = data.results.sort((a, b) => {
+                        return parseInt(a.properties.Horario.title[0].text.content) - parseInt(b.properties.Horario.title[0].text.content);
+                    });
+
+                    sortedData.forEach(item => {
+                        const horario = document.createElement('span');
+                        horario.textContent = item.properties.Horario.title[0].text.content + ':00 hrs';
+
+                        // Lunes
+                        // Lunes
+                        const horarioLunesDiv = document.createElement('div');
+                        horarioLunesDiv.className = 'horario';
+
+                        const estadoLunes = document.createElement('button');
+
+                        // Botón adicional para "Cliente"
+                        const clienteLunesBtn = document.createElement('button');
+                        clienteLunesBtn.textContent = 'Cliente';
+
+                        
+
+                        setButtonState(estadoLunes, item.properties.lunes.checkbox);
+
+                        horarioLunesDiv.appendChild(horario.cloneNode(true));
+                        horarioLunesDiv.appendChild(estadoLunes);
+
+                        // Añadir el botón "Cliente" al div
+                        horarioLunesDiv.appendChild(clienteLunesBtn);
+
+                        // Añadir el div completo a horariosLunes una sola vez
+                        horariosLunes.appendChild(horarioLunesDiv);
+
+                        estadoLunes.addEventListener('click', function () {
+                            const newState = !item.properties.lunes.checkbox;
+                            setButtonState(estadoLunes, newState);
+                            updateStatus('lunes', item.properties.Horario.title[0].text.content, newState)
+                                .catch(() => {
+                                    setButtonState(estadoLunes, !newState);
+                                    alert('Error al actualizar el estado. Intente nuevamente.');
+                                });
+                        });
+                        clienteLunesBtn.addEventListener('click', async function () {
+    await handleClienteButtonClick('lunes', item.properties.Horario.title[0].text.content);
+});
+
+                        // Martes
+                        const horarioMartesDiv = document.createElement('div');
+                        horarioMartesDiv.className = 'horario';
+
+                        const estadoMartes = document.createElement('button');
+
+                        // Botón adicional para "Cliente"
+                        const clienteMartesBtn = document.createElement('button');
+                        clienteMartesBtn.textContent = 'Cliente';
+
+                      
+                        setButtonState(estadoMartes, item.properties.martes.checkbox);
+                        horarioMartesDiv.appendChild(horario.cloneNode(true));
+                        horarioMartesDiv.appendChild(estadoMartes);
+
+                        // Añadir el botón "Cliente" al div
+                        horarioMartesDiv.appendChild(clienteMartesBtn);
+
+                        // Añadir el div completo a horariosMartes una sola vez
+                        horariosMartes.appendChild(horarioMartesDiv);
+
+                        estadoMartes.addEventListener('click', function () {
+                            const newState = !item.properties.martes.checkbox;
+                            setButtonState(estadoMartes, newState);
+                            updateStatus('martes', item.properties.Horario.title[0].text.content, newState)
+                                .catch(() => {
+                                    setButtonState(estadoMartes, !newState);
+                                    alert('Error al actualizar el estado. Intente nuevamente.');
+                                });
+                        });
+                        clienteMartesBtn.addEventListener('click', async function () {
+    await handleClienteButtonClick('martes', item.properties.Horario.title[0].text.content);
+});
+
+                        // Miércoles
+                        const horarioMiercolesDiv = document.createElement('div');
+                        horarioMiercolesDiv.className = 'horario';
+                        const estadoMiercoles = document.createElement('button');
+                        const clienteMiercolesBtn = document.createElement('button');  // Botón adicional para "Cliente"
+                        clienteMiercolesBtn.textContent = 'Cliente';  // Texto para el botón "Cliente"
+
+                        setButtonState(estadoMiercoles, item.properties.miercoles.checkbox);
+
+                        horarioMiercolesDiv.appendChild(horario.cloneNode(true));
+                        horarioMiercolesDiv.appendChild(estadoMiercoles);
+                        horarioMiercolesDiv.appendChild(clienteMiercolesBtn);  // Añadir el botón "Cliente" al div
+
+                        horariosMiercoles.appendChild(horarioMiercolesDiv);
+
+                        estadoMiercoles.addEventListener('click', function () {
+                            const newState = !item.properties.miercoles.checkbox;
+                            setButtonState(estadoMiercoles, newState);
+                            updateStatus('miercoles', item.properties.Horario.title[0].text.content, newState)
+                                .catch(() => {
+                                    setButtonState(estadoMiercoles, !newState);
+                                    alert('Error al actualizar el estado. Intente nuevamente.');
+                                });
+                        });
+
+                        // Aquí puedes añadir el evento de clic para el botón "Cliente" si es necesario.
+                         
+                        clienteMiercolesBtn.addEventListener('click', async function () {
+    await handleClienteButtonClick('miercoles', item.properties.Horario.title[0].text.content);
+});
+
+
+
+                        // Jueves
+                        const horarioJuevesDiv = document.createElement('div');
+                        horarioJuevesDiv.className = 'horario';
+                        const estadoJueves = document.createElement('button');
+                        const clienteJuevesBtn = document.createElement('button');  // Botón adicional para "Cliente"
+                        clienteJuevesBtn.textContent = 'Cliente';
+
+                        setButtonState(estadoJueves, item.properties.jueves.checkbox);
+
+                        horarioJuevesDiv.appendChild(horario.cloneNode(true));
+                        horarioJuevesDiv.appendChild(estadoJueves);
+                        horarioJuevesDiv.appendChild(clienteJuevesBtn);  // Añadir el botón "Cliente" al div
+
+                        horariosJueves.appendChild(horarioJuevesDiv);
+
+                        estadoJueves.addEventListener('click', function () {
+                            const newState = !item.properties.jueves.checkbox;
+                            setButtonState(estadoJueves, newState);
+                            updateStatus('jueves', item.properties.Horario.title[0].text.content, newState)
+                                .catch(() => {
+                                    setButtonState(estadoJueves, !newState);
+                                    alert('Error al actualizar el estado. Intente nuevamente.');
+                                });
+                        });
+
+                      
+                        clienteJuevesBtn.addEventListener('click', async function () {
+    await handleClienteButtonClick('jueves', item.properties.Horario.title[0].text.content);
+});
+
+                        // Viernes
+                        const horarioViernesDiv = document.createElement('div');
+                        horarioViernesDiv.className = 'horario';
+                        const estadoViernes = document.createElement('button');
+                        const clienteViernesBtn = document.createElement('button');  // Botón adicional para "Cliente"
+                        clienteViernesBtn.textContent = 'Cliente';
+
+                        setButtonState(estadoViernes, item.properties.viernes.checkbox);
+
+                        horarioViernesDiv.appendChild(horario.cloneNode(true));
+                        horarioViernesDiv.appendChild(estadoViernes);
+                        horarioViernesDiv.appendChild(clienteViernesBtn);  // Añadir el botón "Cliente" al div
+
+                        horariosViernes.appendChild(horarioViernesDiv);
+
+                        estadoViernes.addEventListener('click', function () {
+                            const newState = !item.properties.viernes.checkbox;
+                            setButtonState(estadoViernes, newState);
+                            updateStatus('viernes', item.properties.Horario.title[0].text.content, newState)
+                                .catch(() => {
+                                    setButtonState(estadoViernes, !newState);
+                                    alert('Error al actualizar el estado. Intente nuevamente.');
+                                });
+                        });
+
+                        clienteViernesBtn.addEventListener('click', async function () {
+    await handleClienteButtonClick('sabado', item.properties.Horario.title[0].text.content);
+});
+
+
+
+                        // Sábado
+                        // Sábado
+                        const horarioSabadoDiv = document.createElement('div');
+                        horarioSabadoDiv.className = 'horario';
+                        const estadoSabado = document.createElement('button');
+                        const clienteSabadoBtn = document.createElement('button');  // Botón adicional para "Cliente"
+                        clienteSabadoBtn.textContent = 'Cliente';
+
+                        setButtonState(estadoSabado, item.properties.sabado.checkbox);
+
+                        horarioSabadoDiv.appendChild(horario.cloneNode(true));
+                        horarioSabadoDiv.appendChild(estadoSabado);
+                        horarioSabadoDiv.appendChild(clienteSabadoBtn);  // Añadir el botón "Cliente" al div
+
+                        horariosSabado.appendChild(horarioSabadoDiv);
+
+                        estadoSabado.addEventListener('click', function () {
+                            const newState = !item.properties.sabado.checkbox;
+                            setButtonState(estadoSabado, newState);
+                            updateStatus('sabado', item.properties.Horario.title[0].text.content, newState)
+                                .catch(() => {
+                                    setButtonState(estadoSabado, !newState);
+                                    alert('Error al actualizar el estado. Intente nuevamente.');
+                                });
+                        });
+                        clienteSabadoBtn.addEventListener('click', async function () {
+    await handleClienteButtonClick('sabado', item.properties.Horario.title[0].text.content);
+});
+
+
+                    });
+                });
+        }
+
+        function setButtonState(button, state) {
+            if (state) {
+                button.textContent = 'Ocupado';
+                button.style.backgroundColor = '#ff2f2f';
+            } else {
+                button.textContent = 'Libre';
+                button.style.backgroundColor = '#41d141';
+            }
+        }
+
+        function updateStatus(day, horario, newState) {
+            return fetch('/updateStatus', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ day, horario, newState })
+            })
+                .then(response => response.json());
+        }
+
+        // Llamar a la función inmediatamente para obtener los datos iniciales
+        fetchAndRenderData();
+
+        let pollingInterval;
+        function startPolling() {
+            if (!pollingInterval) {
+                fetchAndRenderData();
+                pollingInterval = setInterval(fetchAndRenderData, 5000);
+            }
+        }
+
+        function stopPolling() {
+            clearInterval(pollingInterval);
+            pollingInterval = null;
+        }
+
+        // Start or stop polling based on page visibility
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                stopPolling();
+            } else {
+                startPolling();
+            }
+        });
+
+        // Start polling immediately when the page is loaded (if it's visible)
+        if (!document.hidden) {
+            startPolling();
+        }
+
+        // Obtener la fecha actual
+        const currentDate = new Date();
+
+        // Determinar el día actual de la semana (0 = Domingo, 1 = Lunes, etc.)
+        const currentDayOfWeek = currentDate.getDay();
+
+        // Calcular la diferencia entre el día actual y el próximo Lunes
+        const daysUntilNextMonday = (1 - currentDayOfWeek + 7) % 7;
+        const daysUntilNextTuesday = (2 - currentDayOfWeek + 7) % 7;
+
+        // Calcular las fechas para el próximo Lunes y Martes
+        const nextMondayDate = new Date(currentDate);
+        nextMondayDate.setDate(currentDate.getDate() + daysUntilNextMonday);
+
+        const nextTuesdayDate = new Date(currentDate);
+        nextTuesdayDate.setDate(currentDate.getDate() + daysUntilNextTuesday);
+
+        // Actualizar el HTML para mostrar estas fechas
+        document.getElementById('lunesContainer').querySelector('h2').textContent = 'Lunes ' + nextMondayDate.getDate();
+        document.getElementById('martesContainer').querySelector('h2').textContent = 'Martes ' + nextTuesdayDate.getDate();
+
+        // Calcula la diferencia entre el día actual y los días restantes de la semana
+        const daysUntilNextWednesday = (3 - currentDayOfWeek + 7) % 7;
+        const daysUntilNextThursday = (4 - currentDayOfWeek + 7) % 7;
+        const daysUntilNextFriday = (5 - currentDayOfWeek + 7) % 7;
+        const daysUntilNextSaturday = (6 - currentDayOfWeek + 7) % 7;
+
+        // Calcular las fechas para los días restantes de la semana
+        const nextWednesdayDate = new Date(currentDate);
+        nextWednesdayDate.setDate(currentDate.getDate() + daysUntilNextWednesday);
+
+        const nextThursdayDate = new Date(currentDate);
+        nextThursdayDate.setDate(currentDate.getDate() + daysUntilNextThursday);
+
+        const nextFridayDate = new Date(currentDate);
+        nextFridayDate.setDate(currentDate.getDate() + daysUntilNextFriday);
+
+        const nextSaturdayDate = new Date(currentDate);
+        nextSaturdayDate.setDate(currentDate.getDate() + daysUntilNextSaturday);
+
+        // Actualizar el HTML para mostrar las fechas de los días restantes
+        document.getElementById('miercolesContainer').querySelector('h2').textContent = 'Miércoles ' + nextWednesdayDate.getDate();
+        document.getElementById('juevesContainer').querySelector('h2').textContent = 'Jueves ' + nextThursdayDate.getDate();
+        document.getElementById('viernesContainer').querySelector('h2').textContent = 'Viernes ' + nextFridayDate.getDate();
+        document.getElementById('sabadoContainer').querySelector('h2').textContent = 'Sábado ' + nextSaturdayDate.getDate();
+
+        function checkAndResetSchedule() {
+            const currentTime = new Date();
+
+            console.log("Verificando si es necesario restablecer horarios...");
+            console.log("Hora actual:", currentTime.getHours() + ":" + currentTime.getMinutes());
+
+            // Verificar si la hora actual es 16:15 o posterior
+            if (currentTime.getHours() == 23 && currentTime.getMinutes() >= 30) {
+                console.log("Hora para restablecer horarios alcanzada.");
+
+                // Obtenemos la última vez que se restablecieron los horarios del localStorage
+                const lastResetTime = localStorage.getItem('lastResetTime');
+                const lastResetDate = lastResetTime ? new Date(lastResetTime) : null;
+
+                console.log("Última vez que se restablecieron horarios:", lastResetDate);
+
+                // Si es la primera vez que se accede o si se accede después de las 16:15 y no se han restablecido los horarios para el día actual
+                if (!lastResetDate || (currentTime.getDate() !== lastResetDate.getDate())) {
+                    console.log("Restableciendo horarios...");
+
+                    const currentDay = new Date(currentTime);
+                    currentDay.setDate(currentDay.getDate() - 1);  // Obtener el día anterior
+                    const dayName = currentDay.toLocaleDateString('es-ES', { weekday: 'long' }).toLowerCase();
+
+                    const buttons = document.querySelectorAll(`#horarios${dayName.charAt(0).toUpperCase() + dayName.slice(1)} button`);
+                    buttons.forEach((button, index) => {
+                        setTimeout(() => {
+                            const horario = button.previousSibling.textContent.split(':')[0];
+
+                            console.log(`Restableciendo horario: ${horario} del día ${dayName}.`);
+
+                            // Actualizar el estado en el frontend
+                            setButtonState(button, false);
+
+                            // Envía una petición al backend para reflejar el cambio en Notion
+                            updateStatus(dayName, horario, false);
+                        }, index * 500);  // Añade un retraso de 500ms entre peticiones
+                    });
+
+                    // Guardar la fecha y hora actuales como la última vez que se restablecieron los horarios
+                    localStorage.setItem('lastResetTime', currentTime.toString());
+                    console.log("Horarios restablecidos. Actualizando 'lastResetTime' en localStorage.");
+                } else {
+                    console.log("Los horarios ya fueron restablecidos hoy. No se hace nada.");
+                }
+            }
+        }
+
+        // Llamar a checkAndResetSchedule al cargar la página para comprobar si necesitamos restablecer los horarios
+        checkAndResetSchedule();
+
+// Función para resetear los datos de contacto a las 23:30
+function resetContactData() {
+    const currentTime = new Date();
+    if (currentTime.getHours() === 19 && currentTime.getMinutes() === 5) {
+        const currentDay = currentTime.toLocaleDateString('es-ES', { weekday: 'long' }).toLowerCase();
+        for (let i = 0; i < localStorage.length; i++) {
+            const storageKey = localStorage.key(i);
+            if (storageKey.startsWith(currentDay)) {
+                localStorage.removeItem(storageKey);
+            }
+        }
+        console.log("Los datos de contacto han sido reseteados.");
+    }
+}
+
+// Ejecutar la función cada minuto
+setInterval(resetContactData, 60000);
+
+
+
+
+
+    </script>
+</body>
+
+</html>

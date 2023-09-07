@@ -14,10 +14,12 @@ background-image: url(../ideogram-_38_.jpg);
 }
 
 h2{
+  font-family: 'Roboto', sans-serif;
     color: white;
 }
 span{
-    color: wheat;
+  font-family: 'Roboto', sans-serif;
+    color: rgb(255, 255, 255);
 }
 
 button{
@@ -56,7 +58,7 @@ button{
     margin-right: auto;
   }
 
-  body {
+  .bodytur {
     /* Ruta de la imagen */
     background-image: url('ideogram (4).jpeg');
     
@@ -79,3 +81,76 @@ button{
     padding: 0;
   }
   
+  .bodyindex{ 
+      background-image: url('ideogram-_38_.jpg');
+      background-position: center;  
+      background-size: cover;
+            background-repeat: no-repeat;
+      
+      /* Añadir una capa de opacidad */
+      background-color: rgba(0, 0, 0, 0.5);
+      background-blend-mode: overlay;
+      
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    
+  }
+
+  /* Estilos para el fondo y la capa de opacidad */
+body {
+  background-image: url('ideogram (4).jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: overlay;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el contenedor de botones */
+.button-container {
+  margin-top: -527px;
+  flex-direction: column;
+  display: flex;
+  gap: 20px; /* Espacio entre los botones */
+}
+
+/* Estilos para los botones con efecto de neón */
+.neon-button {
+  background-color: #1d1d1d;
+  border: none;
+  color: white;
+  padding: 8px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  box-shadow: 0 0 5px #00ffff, 0 0 7px #00ffff, 0 0 15px #ff00de, 0 0 9px #ff00de, 0 0 5px #ff00de, 0 0 3px #ff00de, 0 0 5px #ff00de
+}
+
+.neon-button:hover {
+  background-color: #333;
+}
+.hidden {
+  display: flex;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  visibility: hidden;
+}
+
+/* Estilos para los botones cuando están visibles */
+.visible {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  flex-direction: column;
+}
