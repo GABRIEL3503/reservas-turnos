@@ -10,11 +10,9 @@
 }
 #contenedor{
 display: flex;
+background-image: url(../ideogram-_38_.jpg);
 }
-body{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(96,96,103,1) 35%, rgba(162,182,186,1) 100%);
-}
+
 h2{
     color: white;
 }
@@ -34,6 +32,7 @@ button{
 .swiper {
     width: 100%;
     height: 100%;
+   
   }
 
   .swiper-slide {
@@ -56,3 +55,27 @@ button{
     margin-left: auto;
     margin-right: auto;
   }
+
+  body {
+    /* Ruta de la imagen */
+    background-image: url('ideogram (4).jpeg');
+    
+    /* Centrar la imagen de fondo */
+    background-position: center;
+    
+    /* Hacer que la imagen de fondo ocupe toda la pantalla */
+    background-size: cover;
+    
+    /* Evitar que la imagen de fondo se repita */
+    background-repeat: no-repeat;
+    
+    /* Añadir una capa de opacidad */
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: overlay;
+    
+    /* Asegurarse de que el fondo ocupe toda la altura y anchura */
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
